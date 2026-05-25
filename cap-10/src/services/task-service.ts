@@ -5,13 +5,9 @@
 // - Erros previsíveis (nao encontrado, inválido): retornar Result com fail()
 // - Erros imprevisíveis (banco offline, bug): lancar excecao (catch no error middleware)
 
-import { Task } from '../types/task';
+import { Task, CreateTaskInput, UpdateTaskInput } from '../types/task';
 import { Result, ok, fail } from '../types/result';
 import { NotFoundError, ValidationError } from '../errors/app-error';
-
-// Tipo de input derivado por Utility Types
-type CreateTaskInput = Omit<Task, 'id' | 'createdAt' | 'updatedAt'>;
-type UpdateTaskInput = Partial<Pick<Task, 'title' | 'description' | 'status'>>;
 
 // Armazenamento em memória (substituido pelo Prisma no cap-09)
 const tasks: Task[] = [];

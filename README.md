@@ -43,6 +43,14 @@ PORT=3000
 NODE_ENV=development
 ```
 
+O `DATABASE_URL` só é necessário a partir do cap-09 (Prisma). Para caps 02 a 08, o projeto usa armazenamento em memória e não precisa de banco.
+
+**Opções para `DATABASE_URL`:**
+- **Local (Docker):** `docker run -e POSTGRES_PASSWORD=postgres -p 5432:5432 postgres:16`
+  → `postgresql://postgres:postgres@localhost:5432/task_api`
+- **Nuvem gratuita:** [Supabase](https://supabase.com/dashboard) → New Project → Settings → Database → Connection string
+- **Railway:** [railway.app](https://railway.app) → New Project → PostgreSQL → Connect
+
 ## Estrutura por capítulo
 
 | Capítulo | Diretório | O que você constrói |

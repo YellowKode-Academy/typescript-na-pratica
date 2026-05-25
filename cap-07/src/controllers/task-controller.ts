@@ -6,6 +6,8 @@ import { Request, Response } from 'express';
 import { Task, TaskResponse, CreateTaskInput, UpdateTaskInput } from '../types/task';
 import { createTask, findTask, listTasks, updateTask, deleteTask } from '../services/task-service';
 
+type IdParams = { id: string };
+
 function mapTaskToResponse(task: Task): TaskResponse {
   return {
     id: task.id,
@@ -30,7 +32,7 @@ export function createTaskHandler(req: Request, res: Response): void {
   res.status(201).json({ data: mapTaskToResponse(result.data) });
 }
 
-export function getTaskHandler(req: Request, res: Response): void {
+export function getTaskHandler(req: Request<IdParams>, res: Response): void {
   const result = findTask(req.params.id);
 
   if (result.type === 'failure') {
@@ -53,7 +55,7 @@ export function listTasksHandler(_req: Request, res: Response): void {
   res.json({ data: result.data.map(mapTaskToResponse) });
 }
 
-export function updateTaskHandler(req: Request, res: Response): void {
+export function updateTaskHandler(req: Request<IdParams>, res: Response): void {
   const input = req.body as UpdateTaskInput;
   const result = updateTask(req.params.id, input);
 
@@ -65,7 +67,7 @@ export function updateTaskHandler(req: Request, res: Response): void {
   res.json({ data: mapTaskToResponse(result.data) });
 }
 
-export function deleteTaskHandler(req: Request, res: Response): void {
+export function deleteTaskHandler(req: Request<IdParams>, res: Response): void {
   const result = deleteTask(req.params.id);
 
   if (result.type === 'failure') {
