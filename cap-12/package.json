@@ -1,7 +1,7 @@
 {
   "name": "task-api",
   "version": "1.0.0",
-  "description": "API REST de tarefas — TypeScript, Express 5, Prisma, Vitest",
+  "description": "API REST de tarefas - TypeScript, Express 5, Prisma, Vitest",
   "main": "dist/index.js",
   "scripts": {
     "dev": "tsx watch src/index.ts",
@@ -16,16 +16,16 @@
     "db:studio": "prisma studio"
   },
   "dependencies": {
-    "@prisma/client": "^5.0.0",
+    "@prisma/client": "^6.0.0",
     "express": "^5.0.0"
   },
   "devDependencies": {
     "@types/express": "^5.0.0",
-    "@types/node": "^20.0.0",
-    "@vitest/coverage-v8": "^1.0.0",
-    "prisma": "^5.0.0",
-    "tsx": "^4.0.0",
-    "typescript": "^5.4.0",
-    "vitest": "^1.0.0"
+    "@types/node": "^22.0.0",
+    "@vitest/coverage-v8": "^2.1.0",
+    "prisma": "^6.0.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.7.0",
+    "vitest": "^2.1.0"
   }
 }

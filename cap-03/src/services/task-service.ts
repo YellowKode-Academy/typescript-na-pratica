@@ -1,5 +1,5 @@
 // src/services/task-service.ts
-// Servico de tarefas — cap-03.
+// Servico de tarefas - cap-03.
 // Demonstra: parametros tipados, retorno explícito, operador ??.
 
 import { Task, TaskStatus } from '../types/task';

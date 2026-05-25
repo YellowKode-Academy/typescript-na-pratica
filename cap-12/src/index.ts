@@ -9,7 +9,7 @@ const app = express();
 
 app.use(express.json());
 
-// Health check — testado no curl final do cap-12
+// Health check - testado no curl final do cap-12
 app.get('/health', (_req, res) => {
   res.json(getHealthStatus());
 });

@@ -1,6 +1,6 @@
 // vitest.config.ts
 // Cap-11: configuracao do Vitest para projeto Node.js.
-// Nao requer configuracao extra para TypeScript — usa esbuild nativamente.
+// Nao requer configuracao extra para TypeScript - usa esbuild nativamente.
 
 import { defineConfig } from 'vitest/config';
 

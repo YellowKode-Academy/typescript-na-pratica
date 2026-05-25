@@ -22,12 +22,13 @@ interface Task {
 // Mock tipado do repositorio.
 // O tipo garante que todos os métodos do repositorio real estao presentes.
 // Se um método for adicionado ao repositorio e esquecido aqui, TypeScript avisa.
+// Sintaxe Vitest 2.x: vi.fn<FunctionType>() - o parametro é o tipo da funcao completa.
 const mockTaskRepository = {
-  findById: vi.fn<[string], Promise<Task | null>>(),
-  findAll: vi.fn<[], Promise<Task[]>>(),
-  create: vi.fn<[Omit<Task, 'id' | 'createdAt' | 'updatedAt'>], Promise<Task>>(),
-  update: vi.fn<[string, Partial<Task>], Promise<Task>>(),
-  delete: vi.fn<[string], Promise<void>>(),
+  findById: vi.fn<(id: string) => Promise<Task | null>>(),
+  findAll: vi.fn<() => Promise<Task[]>>(),
+  create: vi.fn<(data: Omit<Task, 'id' | 'createdAt' | 'updatedAt'>) => Promise<Task>>(),
+  update: vi.fn<(id: string, data: Partial<Task>) => Promise<Task>>(),
+  delete: vi.fn<(id: string) => Promise<void>>(),
 };
 
 // Dado de teste reutilizável
