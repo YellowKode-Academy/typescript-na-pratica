@@ -7,7 +7,7 @@ export function createTask(
   userId: string,
   description?: string
 ): Task {
-  return {
+  const task: Task = {
     id: crypto.randomUUID(),
     title,
     description: description ?? null,
@@ -16,6 +16,8 @@ export function createTask(
     createdAt: new Date(),
     updatedAt: new Date(),
   };
+  tasks.push(task);
+  return task;
 }
 
 export function findTask(id: string): Task | null {
