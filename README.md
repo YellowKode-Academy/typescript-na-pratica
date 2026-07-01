@@ -1,4 +1,11 @@
-<p align="center">
+﻿<p align="center">
+
+[![Capa do Livro](cover.jpg)](https://www.amazon.com.br/dp/B0GX6W5ZCV)
+
+> **[Disponivel na Amazon.com.br](https://www.amazon.com.br/dp/B0GX6W5ZCV)** — R$24,97
+
+---
+
   <img src="capa.jpg" alt="TypeScript na Prática" width="320"/>
 </p>
 
